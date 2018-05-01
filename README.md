@@ -12,13 +12,13 @@ devtools::install_github("SharonLutz/powerMRMA")
 
 #### Input
 
-The desired methods to be run can be input using methodnames. The default is that all six methods will run, "MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", and "MA.4Way".
+The desired methods to be run can be input using methodnames. The default is that all six methods will run, "MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", and "MA.4Way". The MR.Classical, MA.Imai and MA.4Way methods will check for an indrect effect from the first SNP input to Y through M. The MR.Egger, MR.IVW and MR.Median methods will use all of the SNPs input to check for an indirect from the SNPs to Y through M.
 
-The number of SNPs to be used as instrumental variables is set using nSNP, (default = 4). The MAF of these SNPS is set using MAF, and should be input as a vector (i.e. MAF = c(0.2,0.2,0.2,0.2)).
+The number of SNPs to be used as instrumental variables is set using nSNP, (default = 4). X is generated from a binomial distribution where the minor allele frequency (MAF) is set using MAF. MAF should be input as a vector (i.e. MAF = c(0.2,0.2,0.2,0.2)).
 
 M is generated such that E\[M\] = ....
 
-\Gamma0 is set with gamma0 (default = 0), \gammaX is set with gammaX and must be input as a vector whose length matches the number of SNPS (nSNP). \gammaU is set with gammaU (default = 0), a non-zero value of gammaU will generate unmeasured confounding. The variance of M is set with varM (default = 1).
+\Gamma0 is set with gamma0 (default = 0), \gammaX is set with gammaX and must be input as a vector whose length matches the number of SNPS (nSNP). \gammaU is set with gammaU (default = 0), a non-zero value of gammaU will generate unmeasured confounding. The variance of M is set with varM (default = 1). You can set \gamma_X to 0 for any SNPS that are not instrumental variables of M.
 
 Y is generated such that E\[Y\] = ....
 
