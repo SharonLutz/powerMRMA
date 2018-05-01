@@ -1,0 +1,9 @@
+Package: powerMRMA
+Type: Package
+Title: This is a power package to examine the mediated path from gene to outcome through an intermediate phenotype
+Version: 1.0
+Date: 2018-05-01
+Author: Annie Thwing, Sharon Lutz
+Maintainer: Annie Thwing <annie.thwing@ucdenver.edu>
+Description: This is a power package to examine the mediated path from gene to outcome through an intermediate phenotype
+License: GPL-2
