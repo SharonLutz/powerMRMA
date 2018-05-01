@@ -17,7 +17,8 @@ library(powerMRMA)
 ?powerMRMA # For details on this function
 
 ```
-#### Intput
+#### Input
+
 
 #### Output
 For this analysis we get the following matrix of the power of each method to detect an indirect effect, and corresponding plot:
