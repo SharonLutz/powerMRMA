@@ -40,9 +40,7 @@ The default alpha level is 0.05, this can be changed using alpha.level. The medi
 
 
 #### Example
-The code below evaluates the power of all six methods to detect an indirect effect from a SNP X to outcome Y given that a mediated path is simulated. This example detects the power of these six metohds four SNPs with a MAF of 0.2 are generated. The power is evaluated at two levels of association between M and Y, 0.15 and 0.25. There is no measurement error of the mediator or unmeasured confounding of the mediator outcome generated. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. 
-
-The classical approach to MR and mediation analysis methods detect the mediated pathway from one SNP to the outcome through the mediator M while the MR Egger, MR IVW and MR Median approach detect the mediated pathway from the same SNP to the outcome through using all four SNPS as instrumental variables for M. This code runs 100 simulations of a sample size of 1000.
+This example displays the power of all six methods, using four SNPs as instrumental variables, each with a MAF of 0.2. Two levels of association between M and Y are evaluated, 0.15 and 0.25. There is no measurement error of the mediator or unmeasured confounding of the mediator outcome generated. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. This code runs 100 simulations of a sample size of 1000.
 ```
 library(powerMRMA)
 ?powerMRMA # For details on this function
