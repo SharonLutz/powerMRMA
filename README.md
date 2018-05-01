@@ -14,12 +14,6 @@ devtools::install_github("SharonLutz/powerMRMA")
 
 The desired methods to be run can be input using methodnames. The default is that all six methods will run, "MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", and "MA.4Way".
 
-The sample size can be set using n, the default sample size is 1000.
-
-The number of simulations can be set using n.sim, the default is 500. User should note that this function is slow.
-
-The default alpha level is 0.05, this can be changed using alpha.level. The mediation analysis and MR Classical methods which evaulate one SNP at a time are evaluated using an alpha level of alpha.level/ # of SNPs. The MR Egger, MR IVW and MR Median methods are evaluated using alpha.level.
-
 The number of SNPs to be used as instrumental variables is set using nSNP, (default = 4). The MAF of these SNPS is set using MAF, and should be input as a vector (i.e. MAF = c(0.2,0.2,0.2,0.2).
 
 M is generated such that E\[M\] = ....
@@ -38,7 +32,11 @@ Measurement error is generated such that M* = M + rnorm(\muME,\varME), and M* is
 
 The name of the corresponding plot can be set using plot.name, the default is "powerMRMAplot". Legend.include can be set to true (default) if the user wants a legend included, or false if the user does not want the legend. color can be set to true (default) if the user wants the plot in color or false if the user wants the plot in gray scale.
 
-The seed can be set using seed (default = 1).
+The sample size can be set using n, the default sample size is 1000. The number of simulations can be set using n.sim, the default is 500. User should note that this function is slow. The seed can be set using seed (default = 1).
+
+The default alpha level is 0.05, this can be changed using alpha.level. The mediation analysis and MR Classical methods which evaulate one SNP at a time are evaluated using an alpha level of alpha.level/ # of SNPs. The MR Egger, MR IVW and MR Median methods are evaluated using alpha.level.
+
+
 
 
 #### Example
