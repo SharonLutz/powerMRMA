@@ -60,7 +60,7 @@ For this example analysis we get the following matrix of the power of each metho
 [2,]         0.01     0.05   0.26      0.06     0.5     0.4
 [1] "The plot is saved in your home directory."
 ```
-<img src="https://github.com/SharonLutz/powerMRMA/powerMRMAplot.pdf" width="600">
+<img src="https://github.com/SharonLutz/powerMRMA/powerMRMAplot.png" width="600">
 
 #### Reference
 
