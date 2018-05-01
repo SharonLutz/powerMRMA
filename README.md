@@ -14,7 +14,7 @@ devtools::install_github("SharonLutz/powerMRMA")
 
 The desired methods to be run can be input using methodnames. The default is that all six methods will run, "MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", and "MA.4Way".
 
-The number of SNPs to be used as instrumental variables is set using nSNP, (default = 4). The MAF of these SNPS is set using MAF, and should be input as a vector (i.e. MAF = c(0.2,0.2,0.2,0.2).
+The number of SNPs to be used as instrumental variables is set using nSNP, (default = 4). The MAF of these SNPS is set using MAF, and should be input as a vector (i.e. MAF = c(0.2,0.2,0.2,0.2)).
 
 M is generated such that E\[M\] = ....
 
