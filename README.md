@@ -43,7 +43,6 @@ The seed is set with "seed" (default = 1).
 
 The default alpha level is 0.05 and can be changed by setting "alpha.level". The mediation analysis and MR Classical methods  are evaluated using an alpha level of alpha.level/nSNP while the MR Egger, MR IVW and MR Median methods are evaluated using alpha.level.
 
-
 #### Example
 This example displays the power of all six methods, using four SNPs as instrumental variables, each with a MAF of 0.2. Two levels of association between M and Y are evaluated, 0.15 and 0.25. There is no measurement error of the mediator or unmeasured confounding of the mediator outcome generated. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. This code runs 100 simulations of a sample size of 1000.
 ```
@@ -51,9 +50,10 @@ library(powerMRMA)
 ?powerMRMA # For details on this function
 
 powerMRMA (plot.name = "powerMRMAplot",methodnames = c("MR.Classical","MR.Egger","MR.IVW","MR.Median","MA.Imai","MA.4Way")
-,n = 1000,n.sim=100,MeasurementError=F, nSNP = 4, MAF=c(0.2,0.2,0.2,0.2), gammaX = c(.15,.15,.15,.15), betaM = c(0.15,0.25))
+,n = 1000,n.sim=100,MeasurementError=F, nSNP = 4, MAF=c(0.2,0.2,0.2,0.2), gammaX = c(.15,.15,.15,.15), betaM = c(0, 0.2, 0.25))
 
 ```
+
 #### Output
 For this example analysis we get the following matrix of the power of each method to detect an indirect effect, and corresponding plot:
 
