@@ -15,13 +15,17 @@ nSNP is the number of SNPs generated from a binomial distribution for n subjects
 
 For the SNPs Xi and unmeasured confounder U, the mediator M is generated from a normal distirbution with the variance (input varM) and the mean as follows:
 
+```
 E\[M\] = \gamma0 + sum \gammaX * Xi + \gammaU * U
+```
 
 All of these values are inputted by the user (i.e. the intercept gamma0, the genetic effect size as a vector gammaX, and the effect of the unmeasured confouder U as gammU).
 
 The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
 
+```
 E\[Y\] = beta0 + sum \betaX Xi + sum betaI* Xi* M + betaM * M + betaU* U 
+```
 
 All of these values are inputted by the user (i.e. the intercept beta0, the direct effect from the SNPs X to the outcome Y as a vector betaX, the effect of the unmeasured confouder U as gammU, the interaction effect of the SNPs with the mediator on the outcome Y as a vector betaI, and the effect of the mediator directly on the oucome as betaM).
 
@@ -30,7 +34,8 @@ After the SNPs X, mediator M, and outcome Y are generated, then the powerMRMA pa
 The user can also generate measurment error. Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
 
 #### Example
-This example displays the power of all six methods, using four SNPs as instrumental variables, each with a MAF of 0.2. Two levels of association between M and Y are evaluated, 0.15 and 0.25. There is no measurement error of the mediator or unmeasured confounding of the mediator outcome generated. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. This code runs 100 simulations of a sample size of 1000.
+Here, we consider 4 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of the mediator M on the ouctome Y (i.e. betaM=c(0.15,0.25). There is no measurement error of the mediator or unmeasured confounding of the mediator-outcome relationship. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. This code runs 100 simulations of a sample size of 1000.
+
 ```
 library(powerMRMA)
 ?powerMRMA # For details on this function
