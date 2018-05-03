@@ -1,5 +1,5 @@
 # powerMRMA
-Power package to examine the mediated path from gene to outcome through an intermediate phenotype
+Power package to examine the mediated path from gene to outcome through an intermediate phenotype.
 
 #### Installation
 ```
@@ -13,6 +13,7 @@ devtools::install_github("SharonLutz/powerMRMA")
 #### Input
 
 The methods to compare are designated with "methodnames", the default is methodnames = c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way").
+
 The MR.Classical, MA.Imai and MA.4Way methods all test for the indirect effect from the first SNP input to Y through M. The MR.Egger, MR.IVW and MR.Median methods use all of the SNPs input to check for an indirect from the SNPs to Y through M.
 
 The number of SNPs is set using "nSNP" (default = 4). X is generated from a binomial distribution where the minor allele frequency (MAF) for all SNPS is input as a vector, the default is MAF = c(0.2,0.2,0.2,0.2).
