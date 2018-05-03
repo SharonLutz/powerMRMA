@@ -26,9 +26,7 @@ MA.Imai is the Imai et al. approach to mediation analysis.
 
 MA.4way is the 4 way decompoisition to mediation analysis.
 
-
-
-The MR.Classical, MA.Imai and MA.4Way methods all test for the indirect effect from the first SNP input to Y through M. The MR.Egger, MR.IVW and MR.Median methods use all of the SNPs input to check for an indirect from the SNPs to Y through M.
+Please use ?powerMRMA to see the man page which gives full details on all of the input parameters.
 
 The number of SNPs is set using "nSNP" (default = 4). X is generated from a binomial distribution where the minor allele frequency (MAF) for all SNPS is input as a vector, the default is MAF = c(0.2,0.2,0.2,0.2).
 
