@@ -11,28 +11,14 @@ devtools::install_github("SharonLutz/powerMRMA")
 ```
 
 #### Input
+nSNP is the number of SNPs generated from a binomial distribution for n subjects (input n) for a given minor allele frequency (input vector MAF).
 
-MethodNames denotes the possible methods used. (i.e. MethodNames= c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way")) where 
+For the SNPs Xi and unmeasured confounder U, the mediator M is generated from a normal distirbution with variance (input varM) and mean
+E\[M\] = \gamma0 + sum \gammaX * Xi + \gammaU * U
 
-MR.Classical is the classical approach to MR.
+All of these values are inputted by the user (i.e. the intercept gamma0, the genetic effect size as a vector gammaX, and the effect of the unmeasured confouder U as gammU).
 
-MR.Egger is the Egger Regression approach to MR
-
-MR.IVW is the Inverse Variant Weighted approach to MR.
-
-MR. Median is the Median Weighted approach to MR.
-
-MA.Imai is the Imai et al. approach to mediation analysis.
-
-MA.4way is the 4 way decompoisition to mediation analysis.
-
-Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
-
-The number of SNPs is set using "nSNP" (default = 4). X is generated from a binomial distribution where the minor allele frequency (MAF) for all SNPS is input as a vector, the default is MAF = c(0.2,0.2,0.2,0.2).
-
-M is generated such that E\[M\] = \gamma0 + sum \gammaX * Xi + \gammaU
-
-\gamma0 is set using "gamma0" (default = 0), \gammaX is set using "gammaX" and indicates the association of each SNP Xi with the mediator M. \gammaX must be input as a vector with length equal to nSNP, the default is \gammaX = c(0.15,0.15,0.15,0.15). The user can set \gamma_X to 0 for any SNPS that is not an instrumental variable of M. \gammaU is set with "gammaU" (default = 0), and indicates the level of unmeasured confounding to generate.
+The intercept is inputted\gamma0 is set using "gamma0" (default = 0), \gammaX is set using "gammaX" and indicates the association of each SNP Xi with the mediator M. \gammaX must be input as a vector with length equal to nSNP, the default is \gammaX = c(0.15,0.15,0.15,0.15). The user can set \gamma_X to 0 for any SNPS that is not an instrumental variable of M. \gammaU is set with "gammaU" (default = 0), and indicates the level of unmeasured confounding to generate.
 
 The variance of M is set with varM (default = 1). 
 
@@ -55,6 +41,28 @@ The sample size is set using "n" (default = 1000). The number of simulations to 
 The seed is set with "seed" (default = 1).
 
 The default alpha level is 0.05 and can be changed by setting "alpha.level". The mediation analysis and MR Classical methods  are evaluated using an alpha level of alpha.level/nSNP while the MR Egger, MR IVW and MR Median methods are evaluated using alpha.level.
+
+MethodNames denotes the possible methods used. (i.e. MethodNames= c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way")) where 
+
+MR.Classical is the classical approach to MR.
+Davey Smith, G., & Hemani, G. (2014). Mendelian randomization: genetic anchors for causal inference in epidemiological studies. Human Molecular Genetics, 23(R1), 89-98. 
+
+MR.Egger is the Egger Regression approach to MR.
+Bowden J., Davey Smith G., & Burgess S. (2015). Mendelian Randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 44(2), 512-525. 
+
+MR.IVW is the Inverse Variant Weighted approach to MR.
+Burgess, S., Butterworth, A., & Thompson, S. G. (2013). Mendelian Randomization Analysis With Multiple Genetic Variants Using Summarized Data. Genetic Epidemiology, 37(7), 658-665.
+
+MR. Median is the Median Weighted approach to MR.
+Bowden, J., Davey Smith, G., Haycock, P. C., & Burgess, S. (2016). Consistent Estimation in Mendelian Randomization with Some Invalid Instruments Using a Weighted Median Estimator. Genetic Epidemiology, 40(4), 304-314. 
+
+MA.Imai is the Imai et al. approach to mediation analysis.
+Imai, K., Keele, L., & Tingley, D. (2010). A general approach to causal mediation analysis. Psychological methods, 15(4), 309-334.
+
+MA.4way is the 4 way decompoisition to mediation analysis.
+VanderWeele, T. J. (2014). A unification of mediation and interaction: a four-way decomposition. Epidemiology (Cambridge, Mass.), 25(5), 749-761. 
+
+Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
 
 #### Example
 This example displays the power of all six methods, using four SNPs as instrumental variables, each with a MAF of 0.2. Two levels of association between M and Y are evaluated, 0.15 and 0.25. There is no measurement error of the mediator or unmeasured confounding of the mediator outcome generated. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. This code runs 100 simulations of a sample size of 1000.
