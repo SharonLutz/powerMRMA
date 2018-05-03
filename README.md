@@ -68,3 +68,4 @@ For this example analysis we get the following matrix of the power of each metho
 
 #### Reference
 Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths in Genetic Association Studies: A Comparison of Mendelian Randomization and Mediation Analysis Approaches. (Target Journal).
+
