@@ -34,7 +34,7 @@ After the SNPs X, mediator M, and outcome Y are generated, then the powerMRMA pa
 The user can also generate measurment error. Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
 
 #### Example
-Here, we consider 4 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of the mediator M on the ouctome Y (i.e. betaM=c(0.15,0.25)). There is no measurement error of the mediator or unmeasured confounding of the mediator-outcome relationship. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. This code runs 100 simulations of a sample size of 1000.
+Here, we consider 4 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of the mediator M on the ouctome Y (i.e. betaM=c(0.15,0.25)). We simulate no measurement error of the mediator, no unmeasured confounding of the mediator-outcome relationship, no direct effect from any SNP X to the outcome Y, and no interaction between any SNP X and meditor M on the outcome Y. This code runs 200 simulations for n subjects with n=1000.
 
 ```
 library(powerMRMA)
@@ -46,7 +46,7 @@ powerMRMA (plot.name = "powerMRMAplot",methodnames = c("MR.Classical","MR.Egger"
 ```
 
 #### Output
-For this example analysis, we get the following matrix of the power of each method to detect an indirect effect, and corresponding plot:
+For this example, we get the following matrix of the type 1 error rate (row 1 with betaM=0) and power (row 2 with betaM=0.25 and row 3 with betaM=0.4) of each method to detect an effect of the mediator M on the ouctome Y given that the first SNP is associated with the mediator (i.e. the indirect path) and corresponding plot:
 
 ```
      MR.Classical MR.Egger MR.IVW MR.Median MA.Imai MA.4Way
