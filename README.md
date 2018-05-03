@@ -1,5 +1,5 @@
 # powerMRMA
-Power package to examine the mediated path from gene to outcome through an intermediate phenotype.
+Power package to examine the mediated path from gene to outcome through an intermediate phenotype. This R package compares MR and mediation analysis approaches to detect the path from the mediator to the outcome given at least one SNP serves as an instrumental variable for the mediator.
 
 #### Installation
 ```
