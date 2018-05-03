@@ -25,11 +25,9 @@ E\[Y\] = beta0 + sum \betaX Xi + sum betaI* Xi* M + betaM * M + betaU* U
 
 All of these values are inputted by the user (i.e. the intercept beta0, the direct effect from the SNPs X to the outcome Y as a vector betaX, the effect of the unmeasured confouder U as gammU, the interaction effect of the SNPs with the mediator on the outcome Y as a vector betaI, and the effect of the mediator directly on the oucome as betaM).
 
-The user can also generate measurment error. After the SNPs X, mediator M, and outcome Y are generated, then the powerMRMA package compare the power and type 1 error rate of the following 6 methods to detect the path from M to Y (i.e. betaM) given that at least one SNP serves as an instrumental variable for the mediator.
+After the SNPs X, mediator M, and outcome Y are generated, then the powerMRMA package compares the power and type 1 error rate of the following 6 methods to detect the path from M to Y (i.e. betaM) given that at least one SNP serves as an instrumental variable for the mediator. MethodNames denotes the possible methods used. (i.e. MethodNames= c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way")) where the citations are given at the end of this page.
 
-MethodNames denotes the possible methods used. (i.e. MethodNames= c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way")) where the citations are given at the end of this page.
-
-Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
+The user can also generate measurment error. Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
 
 #### Example
 This example displays the power of all six methods, using four SNPs as instrumental variables, each with a MAF of 0.2. Two levels of association between M and Y are evaluated, 0.15 and 0.25. There is no measurement error of the mediator or unmeasured confounding of the mediator outcome generated. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. This code runs 100 simulations of a sample size of 1000.
