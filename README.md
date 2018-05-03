@@ -68,7 +68,7 @@ powerMRMA (plot.name = "powerMRMAplot",methodnames = c("MR.Classical","MR.Egger"
 ```
 
 #### Output
-For this example analysis we get the following matrix of the power of each method to detect an indirect effect, and corresponding plot:
+For this example analysis, we get the following matrix of the power of each method to detect an indirect effect, and corresponding plot:
 
 ```
      MR.Classical MR.Egger MR.IVW MR.Median MA.Imai MA.4Way
