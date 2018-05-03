@@ -12,9 +12,19 @@ devtools::install_github("SharonLutz/powerMRMA")
 
 #### Input
 
-MethodNames denotes the possible methods used. (i.e. MethodNames= c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way")) where MR.Classical is the classical approach to MR.
+MethodNames denotes the possible methods used. (i.e. MethodNames= c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way")) where 
 
-MR.Egger is the Egger Regression Approach to MR
+MR.Classical is the classical approach to MR.
+
+MR.Egger is the Egger Regression approach to MR
+
+MR.IVW is the Inverse Variant Weighted approach to MR.
+
+MR. Median is the Median Weighted approach to MR.
+
+MA.Imai is the Imai et al. approach to mediation analysis.
+
+MA.4way is the 4 way decompoisition to mediation analysis.
 
 
 
