@@ -59,36 +59,47 @@ For this example, we get the following matrix of the type 1 error rate (row 1 wi
 #### Reference
 The power analysis used here is detailed in the following manuscript: <br/>
 ```
-Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths  <br/>
-in Genetic Association Studies: A Comparison of Mendelian Randomization and Mediation Analysis Approaches. (Target Journal).
+Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths 
+in Genetic Association Studies: A Comparison of Mendelian Randomization 
+and Mediation Analysis Approaches. (Target Journal).
 ```
 
 MR.Classical is the classical approach to MR.<br/>
 ```
-Davey Smith, G., & Hemani, G. (2014). Mendelian randomization: genetic anchors for causal inference in epidemiological studies. Human Molecular Genetics, 23(R1), 89-98. 
+Davey Smith, G., & Hemani, G. (2014). Mendelian randomization: 
+genetic anchors for causal inference in epidemiological studies. 
+Human Molecular Genetics, 23(R1), 89-98. 
 ```
 
 MR.Egger is the Egger Regression approach to MR.<br/>
 ```
-Bowden J., Davey Smith G., & Burgess S. (2015). Mendelian Randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 44(2), 512-525. 
+Bowden J., Davey Smith G., & Burgess S. (2015). Mendelian Randomization 
+with invalid instruments: effect estimation and bias detection through 
+Egger regression. International Journal of Epidemiology, 44(2), 512-525. 
 ```
 
 MR.IVW is the Inverse Variant Weighted approach to MR.<br/>
 ```
-Burgess, S., Butterworth, A., & Thompson, S. G. (2013). Mendelian Randomization Analysis With Multiple Genetic Variants Using Summarized Data. Genetic Epidemiology, 37(7), 658-665.
+Burgess, S., Butterworth, A., & Thompson, S. G. (2013). Mendelian 
+Randomization Analysis With Multiple Genetic Variants Using Summarized 
+Data. Genetic Epidemiology, 37(7), 658-665.
 ```
 
 MR. Median is the Median Weighted approach to MR.<br/>
 ```
-Bowden, J., Davey Smith, G., Haycock, P. C., & Burgess, S. (2016). Consistent Estimation in Mendelian Randomization with Some Invalid Instruments Using a Weighted Median Estimator. Genetic Epidemiology, 40(4), 304-314. 
+Bowden, J., Davey Smith, G., Haycock, P. C., & Burgess, S. (2016). Consistent 
+Estimation in Mendelian Randomization with Some Invalid Instruments Using a 
+Weighted Median Estimator. Genetic Epidemiology, 40(4), 304-314. 
 ```
 
 MA.Imai is the Imai et al. approach to mediation analysis.<br/>
 ```
-Imai, K., Keele, L., & Tingley, D. (2010). A general approach to causal mediation analysis. Psychological methods, 15(4), 309-334.
+Imai, K., Keele, L., & Tingley, D. (2010). A general approach to causal mediation 
+analysis. Psychological methods, 15(4), 309-334.
 ```
 
 MA.4way is the 4 way decompoisition to mediation analysis.<br/>
 ```
-VanderWeele, T. J. (2014). A unification of mediation and interaction: a four-way decomposition. Epidemiology (Cambridge, Mass.), 25(5), 749-761. 
+VanderWeele, T. J. (2014). A unification of mediation and interaction: a 
+four-way decomposition. Epidemiology (Cambridge, Mass.), 25(5), 749-761. 
 ```
