@@ -59,7 +59,8 @@ For this example, we get the following matrix of the type 1 error rate (row 1 wi
 #### Reference
 The power analysis used here is detailed in the following manuscript: <br/>
 ```
-Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths in Genetic Association Studies: A Comparison of Mendelian Randomization and Mediation Analysis Approaches. (Target Journal).
+Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths  <br/>
+in Genetic Association Studies: A Comparison of Mendelian Randomization and Mediation Analysis Approaches. (Target Journal).
 ```
 
 MR.Classical is the classical approach to MR.<br/>
