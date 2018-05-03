@@ -27,25 +27,7 @@ All of these values are inputted by the user (i.e. the intercept beta0, the dire
 
 The user can also generate measurment error. After the SNPs X, mediator M, and outcome Y are generated, then the powerMRMA package compare the power and type 1 error rate of the following 6 methods to detect the path from M to Y (i.e. betaM) given that at least one SNP serves as an instrumental variable for the mediator.
 
-MethodNames denotes the possible methods used. (i.e. MethodNames= c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way")) where 
-
-MR.Classical is the classical approach to MR.
-Davey Smith, G., & Hemani, G. (2014). Mendelian randomization: genetic anchors for causal inference in epidemiological studies. Human Molecular Genetics, 23(R1), 89-98. 
-
-MR.Egger is the Egger Regression approach to MR.
-Bowden J., Davey Smith G., & Burgess S. (2015). Mendelian Randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 44(2), 512-525. 
-
-MR.IVW is the Inverse Variant Weighted approach to MR.
-Burgess, S., Butterworth, A., & Thompson, S. G. (2013). Mendelian Randomization Analysis With Multiple Genetic Variants Using Summarized Data. Genetic Epidemiology, 37(7), 658-665.
-
-MR. Median is the Median Weighted approach to MR.
-Bowden, J., Davey Smith, G., Haycock, P. C., & Burgess, S. (2016). Consistent Estimation in Mendelian Randomization with Some Invalid Instruments Using a Weighted Median Estimator. Genetic Epidemiology, 40(4), 304-314. 
-
-MA.Imai is the Imai et al. approach to mediation analysis.
-Imai, K., Keele, L., & Tingley, D. (2010). A general approach to causal mediation analysis. Psychological methods, 15(4), 309-334.
-
-MA.4way is the 4 way decompoisition to mediation analysis.
-VanderWeele, T. J. (2014). A unification of mediation and interaction: a four-way decomposition. Epidemiology (Cambridge, Mass.), 25(5), 749-761. 
+MethodNames denotes the possible methods used. (i.e. MethodNames= c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way")) where the citations are given at the end of this page.
 
 Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
 
@@ -72,5 +54,25 @@ For this example analysis, we get the following matrix of the power of each meth
 <img src="https://github.com/SharonLutz/powerMRMA/blob/master/powerMRMAplot.png" width="600">
 
 #### Reference
+The power analysis is detailed in the following manuscript:
 Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths in Genetic Association Studies: A Comparison of Mendelian Randomization and Mediation Analysis Approaches. (Target Journal).
+
+MR.Classical is the classical approach to MR.
+Davey Smith, G., & Hemani, G. (2014). Mendelian randomization: genetic anchors for causal inference in epidemiological studies. Human Molecular Genetics, 23(R1), 89-98. 
+
+MR.Egger is the Egger Regression approach to MR.
+Bowden J., Davey Smith G., & Burgess S. (2015). Mendelian Randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 44(2), 512-525. 
+
+MR.IVW is the Inverse Variant Weighted approach to MR.
+Burgess, S., Butterworth, A., & Thompson, S. G. (2013). Mendelian Randomization Analysis With Multiple Genetic Variants Using Summarized Data. Genetic Epidemiology, 37(7), 658-665.
+
+MR. Median is the Median Weighted approach to MR.
+Bowden, J., Davey Smith, G., Haycock, P. C., & Burgess, S. (2016). Consistent Estimation in Mendelian Randomization with Some Invalid Instruments Using a Weighted Median Estimator. Genetic Epidemiology, 40(4), 304-314. 
+
+MA.Imai is the Imai et al. approach to mediation analysis.
+Imai, K., Keele, L., & Tingley, D. (2010). A general approach to causal mediation analysis. Psychological methods, 15(4), 309-334.
+
+MA.4way is the 4 way decompoisition to mediation analysis.
+VanderWeele, T. J. (2014). A unification of mediation and interaction: a four-way decomposition. Epidemiology (Cambridge, Mass.), 25(5), 749-761. 
+
 
