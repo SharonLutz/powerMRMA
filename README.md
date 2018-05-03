@@ -56,7 +56,7 @@ For this example, we get the following matrix of the type 1 error rate (row 1 wi
 ```
 <img src="https://github.com/SharonLutz/powerMRMA/blob/master/powerMRMAplot.png" width="600">
 
-# Reference
+# References
 The power analysis used here is detailed in the following manuscript: <br/>
 ```
 Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths 
