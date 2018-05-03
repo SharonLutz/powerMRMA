@@ -34,7 +34,7 @@ After the SNPs X, mediator M, and outcome Y are generated, then the powerMRMA pa
 The user can also generate measurment error. Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
 
 #### Example
-Here, we consider 4 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of the mediator M on the ouctome Y (i.e. betaM=c(0.15,0.25). There is no measurement error of the mediator or unmeasured confounding of the mediator-outcome relationship. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. This code runs 100 simulations of a sample size of 1000.
+Here, we consider 4 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of the mediator M on the ouctome Y (i.e. betaM=c(0.15,0.25)). There is no measurement error of the mediator or unmeasured confounding of the mediator-outcome relationship. There is no direct effect from any SNP X to the outcome Y or interaction between any X and M on Y generated. This code runs 100 simulations of a sample size of 1000.
 
 ```
 library(powerMRMA)
