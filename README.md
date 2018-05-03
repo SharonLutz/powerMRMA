@@ -26,7 +26,7 @@ MA.Imai is the Imai et al. approach to mediation analysis.
 
 MA.4way is the 4 way decompoisition to mediation analysis.
 
-Please use ?powerMRMA to see the man page which gives full details on all of the input parameters.
+Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
 
 The number of SNPs is set using "nSNP" (default = 4). X is generated from a binomial distribution where the minor allele frequency (MAF) for all SNPS is input as a vector, the default is MAF = c(0.2,0.2,0.2,0.2).
 
