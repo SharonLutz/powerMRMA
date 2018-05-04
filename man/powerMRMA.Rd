@@ -6,107 +6,102 @@
 Power function to examine the mediated path from gene to outcome through an intermediate phenotype
 }
 \usage{
-powerMRMA(plot.name = "powerMRMAplot", methodnames = c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way"), n = 1000, n.sim = 500, MeasurementError = T, alpha.level = 0.05, legend.include = T, color = T, seed = 1, nSNP = 4, MAF = c(0.2, 0.2, 0.2, 0.2), varM = 1, varY = 1, gamma0 = 0, gammaX = c(0.15, 0.15, 0.15, 0.15), gammaU = 0, beta0 = 0, betaM = c(0.15, 0.25), betaX = c(0, 0, 0, 0), betaI = c(0, 0, 0, 0), betaU = 0, muU = 0, varU = 1, muME = 0, varME = 1)
+powerMRMA(plot.name = "powerMRMAplot", MethodNames = c("MR.Classical", "MR.Egger", "MR.IVW", "MR.Median", "MA.Imai", "MA.4Way"), 
+n = 1000, n.sim = 500, MeasurementError = T, alpha.level = 0.05, legend.include = T, color = T, SEED = 1, nSNP = 4, 
+MAF = c(0.2, 0.2, 0.2, 0.2), varM = 1, varY = 1, gamma0 = 0, gammaX = c(0.15, 0.15, 0.15, 0.15), gammaU = 0, beta0 = 0, 
+betaM = c(0,0.20, 0.25), betaX = c(0, 0, 0, 0), betaI = c(0, 0, 0, 0), betaU = 0, muU = 0, varU = 1, muME = 0, varME = 1)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
-  \item{plot.name}{
-%%     ~~Describe \code{plot.name} here~~
+  \item{plot.name}{ is the name of the plot
 }
-  \item{methodnames}{
-%%     ~~Describe \code{methodnames} here~~
+  \item{MethodNames}{ is the vector of methods to run
 }
-  \item{n}{
-%%     ~~Describe \code{n} here~~
+  \item{n}{ is the sample size, (default = 1000)
 }
-  \item{n.sim}{
-%%     ~~Describe \code{n.sim} here~~
+  \item{n.sim}{ is the number of simulations to run (default = 500)
 }
   \item{MeasurementError}{
-%%     ~~Describe \code{MeasurementError} here~~
+is generated on the mediator if T, is not generated if F
 }
   \item{alpha.level}{
-%%     ~~Describe \code{alpha.level} here~~
+is the default alpha level
 }
   \item{legend.include}{
-%%     ~~Describe \code{legend.include} here~~
+is T for adding a legend to the plot, is F for not adding a legend
 }
   \item{color}{
-%%     ~~Describe \code{color} here~~
+is T for producing a color plot, is F for producing a plot in grayscale
 }
-  \item{seed}{
-%%     ~~Describe \code{seed} here~~
+  \item{SEED}{
+sets the seed for the function
 }
   \item{nSNP}{
-%%     ~~Describe \code{nSNP} here~~
+is the number of SNPS to generate
 }
   \item{MAF}{
-%%     ~~Describe \code{MAF} here~~
+is the minor allele frequency
 }
   \item{varM}{
-%%     ~~Describe \code{varM} here~~
+is the variance of the mediator M
 }
   \item{varY}{
-%%     ~~Describe \code{varY} here~~
+is the variance of the outcome Y
 }
   \item{gamma0}{
-%%     ~~Describe \code{gamma0} here~~
+is the intercept for M
 }
   \item{gammaX}{
-%%     ~~Describe \code{gammaX} here~~
+is a vector of the associations of X with M
 }
   \item{gammaU}{
-%%     ~~Describe \code{gammaU} here~~
+is the unmeasured confounding on M
 }
   \item{beta0}{
-%%     ~~Describe \code{beta0} here~~
+is the intercept for Y
 }
   \item{betaM}{
-%%     ~~Describe \code{betaM} here~~
+is the association of M with Y 
 }
   \item{betaX}{
-%%     ~~Describe \code{betaX} here~~
+is a vector of the direct effects of X on Y 
 }
   \item{betaI}{
-%%     ~~Describe \code{betaI} here~~
+is a vector of the interaction effects between X and M on Y 
 }
   \item{betaU}{
-%%     ~~Describe \code{betaU} here~~
+is the unmeasured confounding on Y 
 }
   \item{muU}{
-%%     ~~Describe \code{muU} here~~
+is the mean for U
 }
   \item{varU}{
-%%     ~~Describe \code{varU} here~~
+is the variance for U
 }
   \item{muME}{
-%%     ~~Describe \code{muME} here~~
+is the mean for ME
 }
   \item{varME}{
-%%     ~~Describe \code{varME} here~~
+is the varaince for ME
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+a matrix of the power of each method to detect an effect of the mediator M on the ouctome Y given that the first SNP is associated with the mediator (i.e. the indirect path) and corresponding plot
 }
 \references{
-%% ~put references to the literature/web site here ~
+Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths 
+in Genetic Association Studies: A Comparison of Mendelian Randomization 
+and Mediation Analysis Approaches. (Target Journal).
 }
 \author{
-%%  ~~who you are~~
+
 }
 \note{
 %%  ~~further notes~~
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
@@ -114,7 +109,6 @@ powerMRMA(plot.name = "powerMRMAplot", methodnames = c("MR.Classical", "MR.Egger
 \examples{
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
+
 \keyword{ mediation }% use one of  RShowDoc("KEYWORDS")
 \keyword{ power }% __ONLY ONE__ keyword per line

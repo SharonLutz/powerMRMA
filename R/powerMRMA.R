@@ -1,18 +1,27 @@
 powerMRMA <-
-function(plot.name = "powerMRMAplot",methodnames = c("MR.Classical","MR.Egger","MR.IVW","MR.Median","MA.Imai","MA.4Way"),n = 1000,n.sim=500,
-                      MeasurementError=T, alpha.level=0.05, legend.include=T, color=T, seed=1, nSNP = 4, MAF=c(0.2,0.2,0.2,0.2), varM = 1, varY = 1, gamma0 = 0,
-                      gammaX = c(.15,.15,.15,.15), gammaU = 0, beta0 = 0, betaM = c(0.15,0.25) , betaX = c(0,0,0,0), betaI = c(0,0,0,0), betaU = 0, 
+function(plot.name = "powerMRMAplot",MethodNames = c("MR.Classical","MR.Egger","MR.IVW","MR.Median","MA.Imai","MA.4Way"),n = 1000,n.sim=500,
+                      MeasurementError=T, alpha.level=0.05, legend.include=T, color=T, SEED=1, nSNP = 4, MAF=c(0.2,0.2,0.2,0.2), varM = 1, varY = 1, gamma0 = 0,
+                      gammaX = c(.15,.15,.15,.15), gammaU = 0, beta0 = 0, betaM = c(0,0.2,0.25) , betaX = c(0,0,0,0), betaI = c(0,0,0,0), betaU = 0, 
                       muU = 0, varU = 1, muME = 0, varME = 1){
   
   library(MendelianRandomization)
   library(mediation)
   
+  set.seed(SEED)
+  
   possibleMethods <- c("MR.Classical","MR.Egger","MR.IVW","MR.Median","MA.Imai","MA.4Way")
   
   # Length of methods to be used for color/ line type/ symbol vectors
   numMethods <- length(methodnames)
+  
   colorVec <- c("black" ,"red" , "green3" , "blue" , "cyan" , "magenta")
-  colorVec <- c(colorVec[1:numMethods])
+  
+  # Set grayscale if color = F, set to color if color = T
+  if(color){
+    colorVec <- c(colorVec[1:numMethods])
+  }else{
+    colorVec <- gray.colors(numMethods)
+  }
   
   pchv <- c(1:numMethods)
   ltyv <- rep_len(c(2:numMethods),length.out = length(methodnames))
@@ -82,7 +91,7 @@ function(plot.name = "powerMRMAplot",methodnames = c("MR.Classical","MR.Egger","
       
       gammaX.total <- matX %*% gammaX # Create gammaX as the sum of gammaXi*Xi for each i in 1:n
       muM <- gamma0 + gammaX.total + gammaU*U # Set the seed and generate, make sure the rows Y2 <- rnorm(2)
-      
+
       M <- rnorm(n,muM,varM) # Generate M with mean muM and variance varM
       
       betaX.total <- matX %*% betaX
@@ -174,7 +183,7 @@ function(plot.name = "powerMRMAplot",methodnames = c("MR.Classical","MR.Egger","
   plot(-1,-1,xlim=c(min(betaM),max(betaM)),ylim=c(0,1),ylab="Power",xlab="beta M")
   
     for(mp in 1:length(methodnames)){
-      if(methodnames[mp]=="MR.Classical"){points(betaM,mat_results[,"MR.Classical"],pch = pchv[mp],col = colorVec[mp],type="b",lty = ltyv[mp])}
+      if(methodnames[mp]=="MR.Classical"){lines(betaM,mat_results[,"MR.Classical"],pch = pchv[mp],col = colorVec[mp],type="b",lty = ltyv[mp])}
       if(methodnames[mp]=="MR.Egger"){lines(betaM,mat_results[,"MR.Egger"],pch = pchv[mp],col = colorVec[mp],type="b",lty = ltyv[mp])}
       if(methodnames[mp]=="MR.IVW"){lines(betaM,mat_results[,"MR.IVW"],pch = pchv[mp],col = colorVec[mp],type="b",lty = ltyv[mp])}
       if(methodnames[mp]=="MR.Median"){lines(betaM,mat_results[,"MR.Median"],pch = pchv[mp],col = colorVec[mp],type="b",lty = ltyv[mp])}
