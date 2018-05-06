@@ -36,7 +36,7 @@ Here, we consider 4 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of 
 library(powerMRMA)
 ?powerMRMA # For details on this function
 
-powerMRMA (plot.name = "powerMRMAplot",methodnames = c("MR.Classical","MR.Egger","MR.IVW","MR.Median","MA.Imai","MA.4Way")
+powerMRMA (plot.name = "powerMRMAplot",MethodNames = c("MR.Classical","MR.Egger","MR.IVW","MR.Median","MA.Imai","MA.4Way")
 ,n = 1000,n.sim=100,MeasurementError=F, nSNP = 4, MAF=c(0.2,0.2,0.2,0.2), gammaX = c(.15,.15,.15,.15), betaM = c(0, 0.2, 0.25))
 
 ```
