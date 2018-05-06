@@ -44,13 +44,7 @@ powerMRMA (plot.name = "powerMRMAplot",methodnames = c("MR.Classical","MR.Egger"
 # Output
 For this example, we get the following matrix of the type 1 error rate (row 1 with betaM=0) and power (row 2 with betaM=0.25 and row 3 with betaM=0.4) of each method to detect an effect of the mediator M on the ouctome Y given that the first SNP is associated with the mediator (i.e. the indirect path) and corresponding plot:
 
-```
-     MR.Classical MR.Egger MR.IVW MR.Median MA.Imai MA.4Way
-[1,]         0.00     0.00   0.00      0.00     0.0     0.0
-[2,]         0.01     0.05   0.26      0.06     0.5     0.4
-[1] "The plot is saved in your home directory."
-```
-<img src="https://github.com/SharonLutz/powerMRMA/blob/master/powerMRMAplot.png" width="600">
+
 
 # References
 The power analysis used here is detailed in the following manuscript: <br/>
