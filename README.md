@@ -58,7 +58,7 @@ The power analysis used here is detailed in the following manuscript: <br/>
 ```
 Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths 
 in Genetic Association Studies: A Comparison of Mendelian Randomization 
-and Mediation Analysis Approaches. (Target Journal).
+and Mediation Analysis Approaches. (Submitted).
 ```
 
 MR.Classical is the classical approach to MR.<br/>
