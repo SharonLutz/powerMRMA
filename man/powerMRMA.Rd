@@ -94,7 +94,7 @@ a matrix of the power of each method to detect an effect of the mediator M on th
 \references{
 Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths 
 in Genetic Association Studies: A Comparison of Mendelian Randomization 
-and Mediation Analysis Approaches. (Target Journal).
+and Mediation Analysis Approaches. (Submitted).
 }
 \author{
 
