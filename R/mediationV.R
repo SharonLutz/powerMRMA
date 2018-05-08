@@ -150,10 +150,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
             fit <- lm(unlist(get(d)[yvar]) ~ .,data=tempdata)
             if(nrow(summary(fit)$coefficients) != numCoefficients)
             {
-              print(paste("int is ",int,sep=""))
-              print(paste("numCoefficients is ",numCoefficients,sep=""))
-              print(summary(fit))
-              return(na.matrix)
+              stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+              # print(paste("int is ",int,sep=""))
+              # print(paste("numCoefficients is ",numCoefficients,sep=""))
+              # print(summary(fit))
+              # return(na.matrix)
             }
             assign(paste("out1",t,sep=""),rbind(fit$coefficients,vcov(fit)))
           }
@@ -162,10 +163,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
             fit <- lm(unlist(get(d)[yvar]) ~ unlist(get(d)[avar]) + unlist(get(d)[mvar]))
             if(nrow(summary(fit)$coefficients) != numCoefficients)
             {
-              print(paste("int is ",int,sep=""))
-              print(paste("numCoefficients is ",numCoefficients,sep=""))
-              print(summary(fit))
-              return(na.matrix)
+              stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+              # print(paste("int is ",int,sep=""))
+              # print(paste("numCoefficients is ",numCoefficients,sep=""))
+              # print(summary(fit))
+              # return(na.matrix)
             }
             assign(paste("out1",t,sep=""),rbind(fit$coefficients,vcov(fit)))
           }
@@ -175,10 +177,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
             fit <- lm(unlist(get(d)[yvar]) ~ .,data=tempdata)
             if(nrow(summary(fit)$coefficients) != numCoefficients)
             {
-              print(paste("int is ",int,sep=""))
-              print(paste("numCoefficients is ",numCoefficients,sep=""))
-              print(summary(fit))
-              return(na.matrix)
+              stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+              # print(paste("int is ",int,sep=""))
+              # print(paste("numCoefficients is ",numCoefficients,sep=""))
+              # print(summary(fit))
+              # return(na.matrix)
             }
             assign(paste("out1",t,sep=""),rbind(fit$coefficients,vcov(fit)))
           }
@@ -187,10 +190,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
             fit <- lm(unlist(get(d)[yvar]) ~ unlist(get(d)[avar]) + unlist(get(d)[mvar]) +unlist(get(d)["int"]))
             if(nrow(summary(fit)$coefficients) != numCoefficients)
             {
-              print(paste("int is ",int,sep=""))
-              print(paste("numCoefficients is ",numCoefficients,sep=""))
-              print(summary(fit))
-              return(na.matrix)
+              stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+              # print(paste("int is ",int,sep=""))
+              # print(paste("numCoefficients is ",numCoefficients,sep=""))
+              # print(summary(fit))
+              # return(na.matrix)
             }
             assign(paste("out1",t,sep=""),rbind(fit$coefficients,vcov(fit)))
           }
@@ -207,11 +211,12 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                print("Line 213")
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # print("Line 213")
+                # return(na.matrix)
               }
               assign(paste("out1",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             } # End of if (yreg=="logistic")
@@ -222,10 +227,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -240,10 +246,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -258,10 +265,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -277,10 +285,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
                          + unlist(get(d)["int"]),family=binomial)
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out1",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             } # end of if(yreg="logistic")
@@ -290,10 +299,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
                          ,family=poisson(link = "log"))
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -307,10 +317,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
                          + unlist(get(d)["int"]),family=poisson(link = "log"))
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -324,10 +335,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
                             + unlist(get(d)["int"]))
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -345,10 +357,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out1",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             } # end of if(yreg=="logistic")
@@ -359,10 +372,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -377,10 +391,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -395,10 +410,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -415,10 +431,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
                          family=binomial)
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out1",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             } # end of if(yreg=="logistic")
@@ -427,10 +444,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- glm(unlist(get(d)[yvar]) ~ unlist(get(d)[avar]) + unlist(get(d)[mvar]),family=poisson(link = "log"))
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -443,10 +461,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- glm(unlist(get(d)[yvar]) ~ unlist(get(d)[avar]) + unlist(get(d)[mvar]) ,family=poisson(link = "log"))
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -459,10 +478,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- glm.nb(unlist(get(d)[yvar]) ~ unlist(get(d)[avar]) + unlist(get(d)[mvar]))
               if(nrow(summary(fit)$coefficients) != numCoefficients)
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               cov = vcov(fit)
               gmparms <- summary(fit)$coefficients
@@ -483,10 +503,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- lm(unlist(get(d)[mvar]) ~ .,data=tempdata)
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out2",t,sep=""),rbind(fit$coefficients,vcov(fit)))
               # if(t==100){print(get(paste("out2",t,sep="")))}
@@ -502,10 +523,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- lm(unlist(newset[mvar]) ~ .,data=tempdata)
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out2",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             }
@@ -516,10 +538,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- lm(unlist(get(d)[mvar]) ~ unlist(get(d)[avar]))
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out2",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             }
@@ -533,10 +556,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- lm(unlist(newset[mvar]) ~ unlist(newset[avar]))
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out2",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             }
@@ -552,10 +576,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- lm(unlist(get(d)[mvar]) ~ .,data=tempdata)
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               temp <- rbind(fit$coefficients,vcov(fit))
               RMSE <- rep(summary(fit)$sigma,nrow(temp))
@@ -572,10 +597,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- lm(unlist(newset[mvar]) ~ .,data=tempdata)
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               temp <- rbind(fit$coefficients,vcov(fit))
               RMSE <- rep(summary(fit)$sigma,nrow(temp))
@@ -588,10 +614,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- lm(unlist(get(d)[mvar]) ~ unlist(get(d)[avar]))
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               temp <- rbind(fit$coefficients,vcov(fit))
               RMSE <- rep(summary(fit)$sigma,nrow(temp))
@@ -607,10 +634,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- lm(unlist(newset[mvar]) ~ unlist(newset[avar]))
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               temp <- rbind(fit$coefficients,vcov(fit))
               RMSE <- rep(summary(fit)$sigma,nrow(temp))
@@ -629,10 +657,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out2",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             }
@@ -648,10 +677,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out2",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             }
@@ -662,10 +692,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- glm(as.factor(unlist(get(d)[mvar])) ~ unlist(get(d)[avar]),family=binomial)
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out2",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             }
@@ -679,10 +710,11 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
               fit <- glm(as.factor(unlist(newset[mvar])) ~ unlist(newset[avar]),family=binomial)
               if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
               {
-                print(paste("int is ",int,sep=""))
-                print(paste("numCoefficients is ",numCoefficients,sep=""))
-                print(summary(fit))
-                return(na.matrix)
+                stop("Error (mediationV): There is not enough variability. Increase n or MAF.")
+                # print(paste("int is ",int,sep=""))
+                # print(paste("numCoefficients is ",numCoefficients,sep=""))
+                # print(summary(fit))
+                # return(na.matrix)
               }
               assign(paste("out2",t,sep=""),rbind(fit$coefficients,vcov(fit)))
             }
@@ -1301,7 +1333,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
         fit <- lm(unlist(data1[yvar]) ~ .,data=tempdata)
         if(nrow(summary(fit)$coefficients) != numCoefficients)
         {
-          print(paste("int is ",int,sep=""))
+          # print(paste("int is ",int,sep=""))
           print(paste("numCoefficients is ",numCoefficients,sep=""))
           print(summary(fit))
           return(na.matrix)
@@ -1312,7 +1344,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
         fit <- lm(unlist(data1[yvar]) ~ unlist(data1[avar]) + unlist(data1[mvar]))
         if(nrow(summary(fit)$coefficients) != numCoefficients)
         {
-          print(paste("int is ",int,sep=""))
+          # print(paste("int is ",int,sep=""))
           print(paste("numCoefficients is ",numCoefficients,sep=""))
           print(summary(fit))
           return(na.matrix)
@@ -1324,7 +1356,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
         fit <- lm(unlist(data1[yvar]) ~ .,data=tempdata)
         if(nrow(summary(fit)$coefficients) != numCoefficients)
         {
-          print(paste("int is ",int,sep=""))
+          # print(paste("int is ",int,sep=""))
           print(paste("numCoefficients is ",numCoefficients,sep=""))
           print(summary(fit))
           return(na.matrix)
@@ -1335,7 +1367,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
         fit <- lm(unlist(data1[yvar]) ~ unlist(data1[avar]) + unlist(data1[mvar]) + unlist(data1["int"]))
         if(nrow(summary(fit)$coefficients) != numCoefficients)
         {
-          print(paste("int is ",int,sep=""))
+          # print(paste("int is ",int,sep=""))
           print(paste("numCoefficients is ",numCoefficients,sep=""))
           print(summary(fit))
           return(na.matrix)
@@ -1352,7 +1384,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1365,7 +1397,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1382,7 +1414,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1399,7 +1431,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1417,7 +1449,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
                      + unlist(data1["int"]),family=binomial)
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1429,7 +1461,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
                      + unlist(data1["int"]),family=poisson(link = "log"))
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1445,7 +1477,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
                      + unlist(data1["int"]),family=poisson(link = "log"))
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1460,7 +1492,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- glm.nb(unlist(data1[yvar]) ~ unlist(data1[avar]) + unlist(data1[mvar]) + unlist(data1["int"]))
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1479,7 +1511,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1492,7 +1524,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1509,7 +1541,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1526,7 +1558,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1543,7 +1575,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- glm(as.factor(unlist(data1[yvar])) ~ unlist(data1[avar]) + unlist(data1[mvar]),family=binomial)
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1554,7 +1586,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- glm(unlist(data1[yvar]) ~ unlist(data1[avar]) + unlist(data1[mvar]),family=poisson(link = "log"))
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1569,7 +1601,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- glm(unlist(data1[yvar]) ~ unlist(data1[avar]) + unlist(data1[mvar]),family=poisson(link = "log"))
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1584,7 +1616,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- glm.nb(unlist(data1[yvar]) ~ unlist(data1[avar]) + unlist(data1[mvar]))
           if(nrow(summary(fit)$coefficients) != numCoefficients)
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1605,7 +1637,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- lm(unlist(data1[mvar]) ~ .,data=tempdata)
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1622,7 +1654,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- lm(unlist(newset[mvar]) ~ .,data=tempdata)
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1635,7 +1667,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- lm(unlist(data1[mvar]) ~ unlist(data1[avar]))
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1651,7 +1683,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- lm(unlist(newset[mvar]) ~ unlist(newset[avar]))
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1670,7 +1702,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- lm(unlist(data1[mvar]) ~ .,data=tempdata)
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1689,7 +1721,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- lm(unlist(newset[mvar]) ~ .,data=tempdata)
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1704,7 +1736,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- lm(unlist(data1[mvar]) ~ unlist(data1[avar]))
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1722,7 +1754,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- lm(unlist(newset[mvar]) ~ unlist(newset[avar]))
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1742,7 +1774,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1760,7 +1792,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
 
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1773,7 +1805,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- glm(as.factor(unlist(data1[mvar])) ~ unlist(data1[avar]),family=binomial)
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)
@@ -1789,7 +1821,7 @@ function(dataS,yvar="y",avar="x",mvar="m",cvar='',a0=0,a1=1,m=0,nc=0,yreg="linea
           fit <- glm(as.factor(unlist(newset[mvar])) ~ unlist(newset[avar]),family=binomial)
           if(nrow(summary(fit)$coefficients) != (numCoefficients - (int*1 +1)))
           {
-            print(paste("int is ",int,sep=""))
+            # print(paste("int is ",int,sep=""))
             print(paste("numCoefficients is ",numCoefficients,sep=""))
             print(summary(fit))
             return(na.matrix)

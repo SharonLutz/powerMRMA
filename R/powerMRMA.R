@@ -16,6 +16,7 @@ powerMRMA <-function(plot.name = "powerMRMAplot",MethodNames = c("MR.Classical",
   colorVec <- c("black" ,"red" , "green3" , "blue" , "cyan" , "magenta")
   
   # Set grayscale if color = F, set to color if color = T
+  if(!typeof(color)=="logical"){stop("Error: color must be T/True or F/False")}
   if(color){
     colorVec <- c(colorVec[1:numMethods])
   }else{
@@ -48,7 +49,7 @@ powerMRMA <-function(plot.name = "powerMRMAplot",MethodNames = c("MR.Classical",
   ####
   
   # Error Checks for type/ length
-if(nSNP!=length(MAF)){stop("Error: nSNP must equal length(MAF).")}
+  if(nSNP!=length(MAF)){stop("Error: nSNP must equal length(MAF).")}
   if(nSNP!=length(gammaX)){stop("Error: nSNP must equal length(gammaX).")}
   if(nSNP!=length(betaX)){stop("Error: nSNP must equal length(betaX).")}
   if(nSNP!=length(betaI)){stop("Error: nSNP must equal length(betaI).")}
@@ -59,6 +60,8 @@ if(nSNP!=length(MAF)){stop("Error: nSNP must equal length(MAF).")}
   if(length(muME)>1){stop("Error: muME must not be a vector")}
   if(length(varME)>1){stop("Error: varME must not be a vector")}
   if(length(unique(betaM))<2){stop("Error: there must be at least two distinct values of betaM")}
+  if(!typeof(MeasurementError)=="logical"){stop("Error: MeasurementError must be T/True or F/False")}
+  if(!typeof(legend.include)=="logical"){stop("Error: legend.include must be T/True or F/False")}
   
   # Error checks for possible values
   if(!(varU>0)){stop("Error: varU must be > 0")}
@@ -67,6 +70,10 @@ if(nSNP!=length(MAF)){stop("Error: nSNP must equal length(MAF).")}
   if(!(varME>0)){stop("Error: varME must be > 0")}
   if(min(MAF)<0 | max(MAF)>1){stop("Error: all MAF values must be between 0 and 1")}
   if(min(alpha.level)<0 | max(alpha.level)>1){stop("Error: alpha level must be between 0 and 1")}
+  if(floor(n)!=ceiling(n)){stop("Error: n must be an integer.")}
+  if(n<0 | n==0){stop("Error: n must be greater than zero.")}
+  if(floor(n.sim)!=ceiling(n.sim)){stop("Error: n.sim must be an integer.")}
+  if(n.sim<0 | n.sim==0){stop("Error: n.sim must be greater than zero.")}
   
   # Create Results Matrix
   mat_results <- matrix(0,nrow=length(betaM),ncol=6)

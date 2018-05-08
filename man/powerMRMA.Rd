@@ -85,9 +85,7 @@ is the mean for ME
 is the varaince for ME
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 a matrix of the power of each method to detect an effect of the mediator M on the ouctome Y given that the first SNP is associated with the mediator (i.e. the indirect path) and corresponding plot
 }
@@ -96,19 +94,7 @@ Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths
 in Genetic Association Studies: A Comparison of Mendelian Randomization 
 and Mediation Analysis Approaches. (Submitted).
 }
-\author{
 
-}
-\note{
-%%  ~~further notes~~
-}
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-
-}
 
 \keyword{ mediation }% use one of  RShowDoc("KEYWORDS")
 \keyword{ power }% __ONLY ONE__ keyword per line
