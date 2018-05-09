@@ -92,21 +92,21 @@ powerMRMA <-function(plot.name = "powerMRMAplot",MethodNames = c("MR.Classical",
         matX[,xx] <- rbinom(n,2,MAF[xx]) # Generate x, where column xx of matX has MAF from index xx of MAF.vec
       }
       
-      U <- rnorm(n,muU,varU) # Generate U
+      U <- rnorm(n,muU,sqrt(varU)) # Generate U
       
       gammaX.total <- matX %*% gammaX # Create gammaX as the sum of gammaXi*Xi for each i in 1:n
       muM <- gamma0 + gammaX.total + gammaU*U # Set the seed and generate, make sure the rows Y2 <- rnorm(2)
 
-      M <- rnorm(n,muM,varM) # Generate M with mean muM and variance varM
+      M <- rnorm(n,muM,sqrt(varM)) # Generate M with mean muM and variance varM
       
       betaX.total <- matX %*% betaX
       betaI.total <- matX %*% betaI
       
       muY <- beta0 + betaX.total + betaM[betaM.ind]*M + betaI.total + betaU*U # 
       
-      Y <- rnorm(n,muY,varY) # Generate Y with mean muY and variance varY
+      Y <- rnorm(n,muY,sqrt(varY)) # Generate Y with mean muY and variance varY
       
-      if(MeasurementError){M <- M + rnorm(n,muME,varME)} # Add measurement error
+      if(MeasurementError){M <- M + rnorm(n,muME,sqrt(varME))} # Add measurement error
       
       ################# Run the methods
       
