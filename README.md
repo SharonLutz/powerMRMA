@@ -15,13 +15,13 @@ nSNP is the number of SNPs generated from a binomial distribution for n subjects
 
 For the SNPs Xi and unmeasured confounder U, the mediator M is generated from a normal distribution with the variance (input varM) and the mean as follows:
 
-E\[M\] = &gamma;<sub>o</sub> + &sum; &gamma;<sub>X</sub> * X<sub>i</sub> + &gamma;<sub>U</sub> * U
+E\[M\] = &gamma;<sub>o</sub> + &sum; &gamma;<sub>X</sub>  X<sub>i</sub> + &gamma;<sub>U</sub>  U
 
 All of these values are inputted by the user (i.e. the intercept gamma0, the genetic effect size as a vector gammaX, and the effect of the unmeasured confounder U as gammaU).
 
 The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
 
-E\[Y\] = &beta;<sub>o</sub> + &sum; &beta;<sub>X</sub> X<sub>i</sub> + &sum; &beta;<sub>I</sub>* X<sub>i</sub> * M + &beta;<sub>M</sub>* M + &beta;<sub>U</sub>* U 
+E\[Y\] = &beta;<sub>o</sub> + &sum; &beta;<sub>X</sub> X<sub>i</sub> + &sum; &beta;<sub>I</sub> X<sub>i</sub>  M + &beta;<sub>M</sub> M + &beta;<sub>U</sub> U 
 
 All of these values are inputted by the user (i.e. the intercept beta0, the direct effect from the SNPs X to the outcome Y as a vector betaX, the effect of the unmeasured confouder U as gammaU, the interaction effect of the SNPs with the mediator on the outcome Y as a vector betaI, and the effect of the mediator directly on the outcome as betaM).
 
