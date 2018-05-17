@@ -95,7 +95,7 @@ Imai, K., Keele, L., & Tingley, D. (2010). A general approach to causal mediatio
 analysis. Psychological methods, 15(4), 309-334.
 ```
 
-MA.4way is the 4 way decompoisition to mediation analysis.<br/>
+MA.4way is the 4 way decomposition to mediation analysis.<br/>
 ```
 VanderWeele, T. J. (2014). A unification of mediation and interaction: a 
 four-way decomposition. Epidemiology (Cambridge, Mass.), 25(5), 749-761. 
