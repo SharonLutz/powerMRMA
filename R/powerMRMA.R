@@ -179,8 +179,16 @@ powerMRMA <-function(plot.name = "powerMRMAplot",MethodNames = c("MR.Classical",
   # All of the simulations have been run, divide the matrix by the number of simulations run
   mat_results <- mat_results/n.sim
   
+  # Make NA the methods not done
+  if(!"MR.Classical"%in%MethodNames){mat_results[,"MR.Classical"] <- NA}
+  if(!"MR.Egger"%in%MethodNames){mat_results[,"MR.Egger"] <- NA}
+  if(!"MR.IVW"%in%MethodNames){mat_results[,"MR.IVW"] <- NA}
+  if(!"MR.Median"%in%MethodNames){mat_results[,"MR.Median"] <- NA}
+  if(!"MA.Imai"%in%MethodNames){mat_results[,"MA.Imai"] <- NA}
+  if(!"MA.4Way"%in%MethodNames){mat_results[,"MA.4Way"] <- NA}
+  
   # Output the table for the user
-  print(mat_results)
+  list(mat_results)
   
   # Plot the results
   pdf(paste("~/",plot.name,".pdf",sep=""))
