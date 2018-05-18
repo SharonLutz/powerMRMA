@@ -1,7 +1,7 @@
-# powerMRMA
+## powerMRMA
 Power package to examine the mediated path from gene to outcome through an intermediate phenotype. This R package compares Mendelian Randomization (MR) and mediation analysis approaches to detect the path from the mediator to the outcome given at least one SNP serves as an instrumental variable for the mediator.
 
-# Installation
+## Installation
 ```
 install.packages("devtools") # devtools must be installed first
 install.packages("mediation")
@@ -10,7 +10,7 @@ install.packages("MendelianRandomization")
 devtools::install_github("SharonLutz/powerMRMA")
 ```
 
-# Input
+## Input
 nSNP is the number of SNPs generated from a binomial distribution for n subjects (input n) for a given minor allele frequency (input vector MAF).
 
 For the SNPs Xi and unmeasured confounder U, the mediator M is generated from a normal distribution with the variance (input varM) and the mean as follows:
@@ -29,7 +29,7 @@ After the SNPs X, mediator M, and outcome Y are generated, then the powerMRMA pa
 
 The user can also generate measurement error. Please use ?powerMRMA to see the man page which gives full details for all of the input parameters.
 
-# Example
+## Example
 Here, we consider 4 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of the mediator M on the ouctome Y (i.e. betaM=c(0.15,0.25)). We simulate no measurement error of the mediator, no unmeasured confounding of the mediator-outcome relationship, no direct effect from any SNP X to the outcome Y, and no interaction between any SNP X and mediator M on the outcome Y. This code runs 200 simulations for n subjects with n=1000.
 
 ```
@@ -41,7 +41,7 @@ powerMRMA (plot.name = "powerMRMAplot",MethodNames = c("MR.Classical","MR.Egger"
 c(.15,.15,.15,.15), betaM = c(0, 0.2, 0.25))
 ```
 
-# Output
+## Output
 For this example, we get the following matrix of the type 1 error rate (row 1 with betaM=0) and power (row 2 with betaM=0.25 and row 3 with betaM=0.4) of each method to detect an effect of the mediator M on the ouctome Y given that the first SNP is associated with the mediator (i.e. the indirect path) and corresponding plot:
 
 ```
@@ -53,7 +53,7 @@ For this example, we get the following matrix of the type 1 error rate (row 1 wi
 ```
 <img src="https://github.com/SharonLutz/powerMRMA/blob/master/powerMRMAplot.png" width="600">
 
-# References
+## References
 The power analysis used here is detailed in the following manuscript: <br/>
 ```
 Thwing A, Ghosh D, Hokanson JE, Lutz SM. (2018) Mediated Paths 
